@@ -6,7 +6,7 @@
 /*   By: shinsaeki <shinsaeki@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 21:50:03 by shinsaeki         #+#    #+#             */
-/*   Updated: 2023/10/18 13:39:28 by shinsaeki        ###   ########.fr       */
+/*   Updated: 2023/10/18 18:47:32 by shinsaeki        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,9 @@ char	*get_command_path(char *path, char *cmd)
 	}
 	free(path_copy);
 	return (NULL);
+}
+
+char	*get_command_fullpath(char **environ, char **args)
+{
+	return (get_command_path(get_path_from_environ(environ), args[0]));
 }
